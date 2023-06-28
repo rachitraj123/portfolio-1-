@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
+    <link href="./mail.py" rel="Python" />
     <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         margin: 0;
         padding: 0;
@@ -23,12 +28,12 @@
         height: 70px;
       }
       .title {
-          margin: 0;
-          border: 2.3px solid rgba(26, 3, 49, 0.99);
-          padding: 2px 3px;
-          border-radius: 5px;
-          color: black;
-        }
+        margin: 0;
+        border: 2.3px solid rgba(26, 3, 49, 0.99);
+        padding: 2px 3px;
+        border-radius: 5px;
+        color: black;
+      }
       ul {
         display: flex;
       }
@@ -46,6 +51,8 @@
         transition-duration: 0.2s;
         border-radius: 10px;
         font-weight: 800;
+        opacity: 1;
+        transform: scale(1);
       }
       .section1 {
         display: flex;
@@ -63,7 +70,7 @@
         color: white;
         font-size: 4rem;
       }
-      .info span {
+      span {
         color: rgb(173, 117, 33);
       }
       li:hover {
@@ -72,19 +79,31 @@
         box-shadow: -10px 5px 5px rgb(55, 53, 53);
         transform: rotateX(10deg) rotateY(10deg);
       }
-      .ul li:clicked {
-        transition-duration: 2s;
+      .ul li:active{
+        text-shadow: 2px 2px #5500ff;
+        color: rgb(89, 0, 255);
+        box-shadow: -10px 5px 5px rgb(55, 53, 53);
+        transform: rotateX(10deg) rotateY(10deg);
       }
-      #change {
+      #change1 {
         transition: transform 0.5s;
         display: inline-block;
         width: 200px;
         text-align: center;
       }
-      .out {
+      #change2 {
+        transition: transform 0.5s;
+        display: inline-block;
+        width: 200px;
+        text-align: center;
+      }
+      .out1 {
         transform: scale(0);
       }
-      .button {
+      .out2 {
+        transform: scale(1);
+      }
+      button {
         border-radius: 20px;
         padding: 10px 30px;
         font-size: 3rem;
@@ -93,11 +112,12 @@
         perspective: 1000px;
         transition-duration: 0.23434s;
         font-weight: bold;
+        margin-bottom: 10px;
       }
-      .button a {
+      button a {
         color: #06393f;
       }
-      .button:hover {
+      button:hover {
         text-shadow: 2px 2px #adabaf;
         color: rgb(26, 8, 59);
         box-shadow: -4px 5px rgb(202, 193, 193);
@@ -105,7 +125,7 @@
         transition-duration: 0.2s;
         transform: rotateX(10deg) rotateY(10deg);
       }
-      .hr1 {
+      hr {
         width: 95vw;
         float: left;
         margin-left: 50px;
@@ -134,10 +154,10 @@
         padding: 10px 10px;
         position: relative;
         perspective: 1000px;
+        color: #06393f;
       }
       .section2 .box div:hover {
         box-shadow: -4px 4px #868e97;
-        rotate: 45;
         transform: rotateX(10deg) rotateY(-45deg);
       }
       .img2 {
@@ -145,6 +165,45 @@
         width: 100%;
         height: 214px;
         border-radius: 10px;
+      }
+      @media (max-width: 768px) {
+        .main {
+          width: 50%;
+        }
+      }
+      footer h2 {
+        margin-left: 49px;
+        margin-top: 26px;
+      }
+      footer img {
+        height: 120px;
+        border: 3px solid rgb(181, 174, 174);
+        border-radius: 20px;
+        position: relative;
+        perspective: 1000px;
+        transition-duration: 0.2s;
+      }
+      footer div div {
+        margin-left: 50px;
+        width: fit-content;
+        margin-bottom: 30px;
+        position: relative;
+        display: inline-block;
+        padding: 0 50px;
+      }
+      footer img:hover {
+        transform: rotateX(-10deg) rotateY(-20deg);
+        box-shadow: -6px 6px rgb(107, 107, 103);
+      }
+      .logos {
+        margin-left: 100px;
+      }
+      .contact_info {
+        margin-left: 10px;
+      }
+      .section2 div div p{
+        color: #adabaf;
+        font-size: 3rem;
       }
     </style>
   </head>
@@ -163,10 +222,15 @@
           <h1>Hi, I am <span>Rachit Raj</span></h1>
           <p class="para1">
             I am an enthusiast<span> web deveoper</span>,<br />currently
-            learning <span id="change">Web Developement</span>
+            learning <span id="change1">Web Developement</span>
+            <br />
+            Along With <span id="change2"></span>
           </p>
           <button class="button">
             <a href="./Resume.pdf"> Download CV </a>
+          </button>
+          <button class="contact_info">
+            <a href="#footer" class="contact"> contact_info</a>
           </button>
         </div>
         <div class="pic">
@@ -178,30 +242,48 @@
         <h2 class="h2">Projects:</h2>
         <div class="box" id="bbox">
           <div class="d1">
-            <a href="https://rachitraj123.github.io/hangman/">
+            <a href="https://rachitraj123.github.io/hangman/" target="_blank">
               <img src="./hangman.png" class="img2" />
+              <p>Hangman Game<br>Using <Span>HTML CSS And JavaScript</Span></p>
             </a>
-          </div>
-          <div class="d2">
-            <a href="https://rachitraj123.github.io/hangman/"
-              ><img src="./hangman.png" class="img2"
-            /></a>
-          </div>
-          <div class="d3">
-            <a href="https://rachitraj123.github.io/hangman/"
-              ><img src="./hangman.png" class="img2"
-            /></a>
-          </div>
-          <div class="d4">
-            <a href="https://rachitraj123.github.io/hangman/"><img src="./hangman.png" class="img2"/></a>
           </div>
         </div>
       </section>
     </main>
+    <hr />
+    <footer id="footer">
+      <h2>Contact info:-</h2>
+      <div class="logos">
+        <div id="logo1">
+          <a
+            class="linkedin"
+            href="http://linkedin.com/in/rachitraj1612"
+            target="_blank">
+            <img src="./linkedin.png" class="imglinkedin" />
+          </a>
+        </div>
+        <div id="logo2">
+          <a
+            class="github"
+            href="https://github.com/rachitraj123"
+            target="_blank">
+            <img src="./github.png" class="imggithub" />
+          </a>
+        </div>
+        <div id="logo3">
+          <a
+            class="hackerrank"
+            href="https://www.hackerrank.com/rachitraj1612?hr_r=1"
+            target="_blank">
+            <img src="./hackerRank.png" class="imghackerrank" />
+          </a>
+        </div>
+      </div>
+    </footer>
     <script>
       const symbols = ["HTML", "CSS", "JavaScript"];
       let count = 0;
-      const element = document.getElementById("change");
+      const element = document.getElementById("change1");
       const iteration = () => {
         element.innerHTML = symbols[parseInt(count / 2, 10) % symbols.length];
         if (count % 2 !== 0) {
@@ -216,6 +298,33 @@
       };
       let inthandle = setInterval(iteration, 1000);
       iteration();
+      const symbols1 = ["Python", "DataBase", "Django"];
+      let count1 = 0;
+      const element1 = document.getElementById("change2");
+      const iteration1 = () => {
+        element1.innerHTML =
+          symbols1[parseInt(count1 / 2, 10) % symbols1.length];
+        if (count1 % 2 !== 0) {
+          element1.classList.add("out1");
+        } else {
+          element1.classList.remove("out1");
+        }
+        count1++;
+        if (count1 === symbols1.length * 2) {
+          count1 = 0;
+        }
+      };
+      let inthandle1 = setInterval(iteration1, 1000);
+      iteration1();
+      document
+        .querySelector("li")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          event.target.classList.add("li");
+          setTimeout(function () {
+            window.location.href = event.target.href;
+          }, 300);
+        });
     </script>
   </body>
 </html>
