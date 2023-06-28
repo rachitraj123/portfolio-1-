@@ -204,7 +204,83 @@
         color: #adabaf;
         font-size: 3rem;
       }
-    </style>
+  @media (max-width: 768px) {
+    .main {
+      width: 100%;
+    }
+    .section1 {
+      flex-direction: column;
+      align-items: center;
+    }
+    .section1 .info {
+      padding: 50px;
+    }
+    .section1 .pic {
+      margin-top: 50px;
+    }
+    .section2 {
+      margin-left: 0;
+    }
+    .logos {
+      margin-left: 0;
+      text-align: center;
+    }
+  }
+  @media (max-width: 480px) {
+    .nav {
+      flex-direction: column;
+      align-items: center;
+    }
+    .nav .title {
+      font-size: 2.4rem;
+    }
+    .ul {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .ul li {
+      margin: 10px 0;
+      font-size: 2.6rem;
+    }
+    .info {
+      padding: 30px;
+      text-align: center;
+    }
+    .info > h1 {
+      font-size: 3.2rem;
+    }
+    .section2 .box {
+      flex-direction: column;
+      align-items: center;
+    }
+    .section2 .box div {
+      width: 80%;
+      margin: 20px 0;
+    }
+    .img2 {
+      height: 150px;
+    }
+    footer h2 {
+      margin-left: 0;
+      margin-top: 20px;
+      text-align: center;
+    }
+    footer img {
+      height: 80px;
+    }
+    .logos {
+      margin-left: 0;
+      text-align: center;
+    }
+    .contact_info {
+      margin-bottom: 20px;
+    }
+    .section2 div div p {
+      font-size: 2.4rem;
+    }
+  }
+  </style>
   </head>
   <body>
     <nav class="nav">
